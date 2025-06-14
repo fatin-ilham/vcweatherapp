@@ -15,15 +15,18 @@ body {
   margin: 0;
   padding: 50px;
   overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: url('background.jpg') no-repeat center center/cover;
-  opacity: 0.05;
+  opacity: 0.07;
   z-index: -1;
+  pointer-events: none;
 }
 
 @keyframes gradientShift {
@@ -47,15 +50,28 @@ body {
 }
 
 @keyframes neonPulse {
-  0%, 100% { box-shadow: 0 0 25px #ff2ac3, 0 0 45px #00fff7, inset 0 0 20px #6600cc; }
-  50% { box-shadow: 0 0 35px #ff66cc, 0 0 65px #00fff7, inset 0 0 30px #9900ff; }
+  0%, 100% { 
+    box-shadow: 
+      0 0 25px #ff2ac3, 
+      0 0 45px #00fff7, 
+      inset 0 0 20px #6600cc; 
+  }
+  50% { 
+    box-shadow: 
+      0 0 35px #ff66cc, 
+      0 0 65px #00fff7, 
+      inset 0 0 30px #9900ff; 
+  }
 }
 
 h1 {
   font-size: 28px;
   color: #ff66cc;
   margin-bottom: 35px;
-  text-shadow: 0 0 8px #ff2ac3, 0 0 12px #ff66cc, 2px 2px 4px #330066;
+  text-shadow: 
+    0 0 8px #ff2ac3, 
+    0 0 12px #ff66cc, 
+    2px 2px 4px #330066;
   font-family: 'Press Start 2P', 'Orbitron', sans-serif;
 }
 
@@ -68,7 +84,9 @@ input[type="text"] {
   font-size: 15px;
   background-color: #111;
   color: #00fff7;
-  box-shadow: 0 0 12px #00fff7 inset, 0 0 5px #ff2ac3;
+  box-shadow: 
+    0 0 12px #00fff7 inset, 
+    0 0 5px #ff2ac3;
   margin-bottom: 25px;
   font-family: 'Orbitron', monospace;
   outline: none;
@@ -76,7 +94,9 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  box-shadow: 0 0 14px #ff1493 inset, 0 0 8px #00fff7;
+  box-shadow: 
+    0 0 14px #ff1493 inset, 
+    0 0 8px #00fff7;
 }
 
 button {
@@ -89,13 +109,17 @@ button {
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 15px #ff1493, 0 0 25px #ff66cc;
+  box-shadow: 
+    0 0 15px #ff1493, 
+    0 0 25px #ff66cc;
 }
 
 button:hover {
   background-color: #ff69b4;
   transform: scale(1.07);
-  box-shadow: 0 0 20px #ff69b4, 0 0 35px #00fff7;
+  box-shadow: 
+    0 0 20px #ff69b4, 
+    0 0 35px #00fff7;
 }
 
 #weatherResult {
