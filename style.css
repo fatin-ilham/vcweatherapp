@@ -10,7 +10,7 @@ body {
   background: linear-gradient(135deg, #1a0033, #330066, #6600cc, #cc00ff);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'respondent', cursive;
   color: #00fff7;
   text-align: center;
   margin: 0;
@@ -51,7 +51,7 @@ input[type="text"] {
   color: #00fff7;
   box-shadow: 0 0 8px #00fff7 inset;
   margin-bottom: 20px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'respondent', sans-serif;
 }
 
 button {
@@ -61,7 +61,7 @@ button {
   border: none;
   border-radius: 6px;
   color: #fff;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'respondent', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 0 12px #ff1493;
