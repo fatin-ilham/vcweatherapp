@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 
+
+@font-face {
+  font-family: 'respondent';
+  src: url('Pip-Boy.otf') format('opentype'); 
+}
+
 body {
   background: linear-gradient(135deg, #1a0033, #330066, #6600cc, #cc00ff);
   background-size: 400% 400%;
