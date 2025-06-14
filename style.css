@@ -105,3 +105,13 @@ button:hover {
   color: #ffffff;
   font-family: 'Audiowide', sans-serif;
 }
+
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #7a5e57;
+  border-top: 1px solid #d0b8ac;
+  margin-top: 2rem;
+}
