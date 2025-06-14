@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 
-
 @font-face {
   font-family: 'respondent';
   src: url('respondent.otf') format('opentype'); 
 }
 
 body {
-  background: linear-gradient(135deg, #1a0033, #330066, #6600cc, #cc00ff);
-  background-size: 400% 400%;
+  background: linear-gradient(135deg, #0f002b, #1b0040, #330066, #ff007f);
+  background-size: 600% 600%;
   animation: gradientShift 20s ease infinite;
-  font-family: 'respondent', cursive;
+  font-family: 'respondent', 'Orbitron', sans-serif;
   color: #00fff7;
   text-align: center;
   margin: 0;
   padding: 50px;
+  overflow-x: hidden;
 }
 
 @keyframes gradientShift {
@@ -24,59 +24,76 @@ body {
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 40px;
-  border: 2px solid #ff2ac3;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #ff2ac3, 0 0 30px #00fff7;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 50px 30px;
+  border: 3px double #ff2ac3;
+  border-radius: 20px;
+  box-shadow: 
+    0 0 25px #ff2ac3,
+    0 0 45px #00fff7,
+    inset 0 0 20px #6600cc;
   display: inline-block;
   max-width: 600px;
+  animation: neonPulse 3s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 25px #ff2ac3, 0 0 45px #00fff7, inset 0 0 20px #6600cc; }
+  50% { box-shadow: 0 0 35px #ff66cc, 0 0 65px #00fff7, inset 0 0 30px #9900ff; }
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 28px;
   color: #ff66cc;
-  margin-bottom: 30px;
-  text-shadow: 0 0 5px #ff2ac3, 0 0 10px #ff66cc;
+  margin-bottom: 35px;
+  text-shadow: 0 0 8px #ff2ac3, 0 0 12px #ff66cc, 2px 2px 4px #330066;
+  font-family: 'Press Start 2P', 'Orbitron', sans-serif;
 }
 
 input[type="text"] {
-  padding: 12px 16px;
+  padding: 14px 18px;
   width: 70%;
-  max-width: 300px;
+  max-width: 320px;
   border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  background-color: #222;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #111;
   color: #00fff7;
-  box-shadow: 0 0 8px #00fff7 inset;
-  margin-bottom: 20px;
-  font-family: 'respondent', sans-serif;
+  box-shadow: 0 0 12px #00fff7 inset, 0 0 5px #ff2ac3;
+  margin-bottom: 25px;
+  font-family: 'Orbitron', monospace;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 14px #ff1493 inset, 0 0 8px #00fff7;
 }
 
 button {
-  padding: 10px 24px;
-  font-size: 14px;
+  padding: 12px 30px;
+  font-size: 15px;
   background-color: #ff1493;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   color: #fff;
-  font-family: 'respondent', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 0 12px #ff1493;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px #ff1493, 0 0 25px #ff66cc;
 }
 
 button:hover {
   background-color: #ff69b4;
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 0 20px #ff69b4, 0 0 35px #00fff7;
 }
 
 #weatherResult {
-  margin-top: 30px;
-  font-size: 16px;
-  line-height: 1.6;
-  text-shadow: 0 0 4px #00fff7;
+  margin-top: 35px;
+  font-size: 18px;
+  line-height: 1.8;
+  text-shadow: 0 0 6px #00fff7;
   color: #ffffff;
+  font-family: 'Orbitron', monospace;
 }
-
