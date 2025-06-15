@@ -1,3 +1,4 @@
+const process = require('node:process');
 const apiKey = process.env.API_KEY;
 async function getWeather() {
   const city = document.getElementById("cityInput").value.trim();
