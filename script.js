@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+const apiKey = secrets.API_KEY;
 async function getWeather() {
   const city = document.getElementById("cityInput").value.trim();
   const resultDiv = document.getElementById("weatherResult");
