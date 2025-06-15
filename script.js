@@ -1,4 +1,4 @@
-const apiKey = secrets.API_KEY;
+const apiKey = process.env.API_KEY;
 async function getWeather() {
   const city = document.getElementById("cityInput").value.trim();
   const resultDiv = document.getElementById("weatherResult");
