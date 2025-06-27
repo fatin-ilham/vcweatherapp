@@ -1,5 +1,5 @@
 const process = require('node:process');
-const apiKey = process.env.API_KEY;
+const apiKey = '30b2d59ea021e3f1c416bd1d896ffc98';
 async function getWeather() {
   const city = document.getElementById("cityInput").value.trim();
   const resultDiv = document.getElementById("weatherResult");
