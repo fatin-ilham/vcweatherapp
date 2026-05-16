@@ -4,7 +4,7 @@ A neon-styled weather application with Vice City aesthetics, featuring real-time
 
 ## 🔗 Live Demo
 
-**[🚀 View Live Site](https://fatin-ilham-vcweatherapp.netlify.app)**
+**[🚀 View Live Site](https://vicebangladesh.netlify.app/)**
 
 > ✅ **Legit Site** - This is a personal weather app project. No login required, no data collection.
 > - Source code public on GitHub
