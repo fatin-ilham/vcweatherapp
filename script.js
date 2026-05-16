@@ -36,10 +36,8 @@ async function getWeather() {
   } catch (err) {
     resultDiv.innerHTML = "⚠️ Network error. Check connection and try again.";
   } finally {
-    if (!cityInput.disabled) {
-      cityInput.disabled = false;
-      cityInput.focus();
-    }
+    cityInput.disabled = false;
+    cityInput.focus();
   }
 }
 

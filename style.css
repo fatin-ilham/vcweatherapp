@@ -97,6 +97,14 @@ button:hover {
   box-shadow: 0 0 20px #ff69b4, 0 0 35px #00fff7;
 }
 
+#volumeSlider {
+  width: 70%;
+  max-width: 200px;
+  margin: 15px 0 25px;
+  accent-color: #ff1493;
+  cursor: pointer;
+}
+
 #weatherResult {
   margin-top: 35px;
   font-size: 18px;
