@@ -97,6 +97,14 @@ button:hover {
   box-shadow: 0 0 20px #ff69b4, 0 0 35px #00fff7;
 }
 
+#volumeSlider {
+  width: 70%;
+  max-width: 200px;
+  margin: 15px 0 25px;
+  accent-color: #ff1493;
+  cursor: pointer;
+}
+
 #weatherResult {
   margin-top: 35px;
   font-size: 18px;
@@ -106,7 +114,6 @@ button:hover {
   font-family: 'Audiowide', sans-serif;
 }
 
-
 footer {
   text-align: center;
   padding: 1rem;
@@ -114,4 +121,74 @@ footer {
   color: #ff66cc;
   border-top: 1px solid #d0b8ac;
   margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  .container {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 16px 14px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  #volumeSlider {
+    width: 100%;
+    max-width: none;
+  }
+
+  #weatherResult {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px 12px;
+  }
+
+  .container {
+    padding: 20px 15px;
+    border-width: 2px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  button {
+    padding: 14px 12px;
+    min-height: 48px;
+  }
+
+  #weatherResult {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }

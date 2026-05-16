@@ -9,10 +9,11 @@
 <body>
   <div class="container">
     <h1>🌴 ViceBangladesh 🌴</h1>
-    <input type="text" id="cityInput" placeholder="Enter a Bangladeshi city (e.g. Dhaka)" />
+    <input type="text" id="cityInput" placeholder="Enter a city (e.g. Dhaka, Tokyo, Paris)" />
     <button onclick="getWeather()">Check Weather</button>
     <div id="weatherResult"></div>
     <button id="musicToggleBtn" onclick="toggleMusic()">🔊 Toggle Music</button>
+    <input type="range" id="volumeSlider" min="0" max="100" value="50" oninput="setVolume(this.value)" />
   </div>
 
 
@@ -25,6 +26,9 @@
   <script>
     const bgMusic = document.getElementById('bgMusic');
     const musicToggleBtn = document.getElementById('musicToggleBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    bgMusic.volume = 0.5;
 
     function toggleMusic() {
       if (bgMusic.muted) {
@@ -35,6 +39,12 @@
         bgMusic.muted = true;
         musicToggleBtn.textContent = '🔊 Play Music';
       }
+    }
+
+    function setVolume(value) {
+      bgMusic.volume = value / 100;
+      bgMusic.muted = value === 0;
+      musicToggleBtn.textContent = value === 0 ? '🔊 Play Music' : '🔇 Mute Music';
     }
   </script>
  <footer style="margin-top: 40px; font-family: 'Orbitron', monospace; color: #00fff7; text-align: center;">

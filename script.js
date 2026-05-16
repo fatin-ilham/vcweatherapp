@@ -1,30 +1,53 @@
 
-const apiKey = '30b2d59ea021e3f1c416bd1d896ffc98';
 async function getWeather() {
-  const city = document.getElementById("cityInput").value.trim();
+  const cityInput = document.getElementById("cityInput");
   const resultDiv = document.getElementById("weatherResult");
+  const city = cityInput.value.trim();
 
   if (!city) {
-    resultDiv.innerHTML = "Please enter a city.";
+    resultDiv.innerHTML = "⚠️ Please enter a city.";
     return;
   }
 
+  resultDiv.innerHTML = "⏳ Loading...";
+  cityInput.disabled = true;
+
   try {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},BD&appid=${apiKey}&units=metric`);
+    const res = await fetch(`/.netlify/functions/weather?city=${encodeURIComponent(city)}`);
     const data = await res.json();
 
     if (data.cod !== 200) {
-      resultDiv.innerHTML = "City not found or error fetching data.";
+      resultDiv.innerHTML = `⚠️ ${data.message || "City not found."}`;
+      cityInput.disabled = false;
+      cityInput.focus();
       return;
     }
 
-    const { name, main, weather } = data;
+    const { name, main, weather, sys } = data;
+    const countryFlag = getCountryFlag(sys.country);
     resultDiv.innerHTML = `
-      <strong>${name}</strong><br>
-      🌡️ Temperature: ${main.temp}°C<br>
-      🌧️ Condition: ${weather[0].description}
+      <strong style="font-size: 1.3em;">${countryFlag} ${name}</strong><br>
+      🌡️ Temperature: ${Math.round(main.temp)}°C<br>
+      💧 Humidity: ${main.humidity}%<br>
+      💨 Wind: ${Math.round(data.wind.speed * 3.6)} km/h<br>
+      🌤️ Condition: ${weather[0].description}<br>
+      🌍 Country: ${sys.country}
     `;
   } catch (err) {
-    resultDiv.innerHTML = "Error fetching weather data.";
+    resultDiv.innerHTML = "⚠️ Network error. Check connection and try again.";
+  } finally {
+    cityInput.disabled = false;
+    cityInput.focus();
   }
 }
+
+function getCountryFlag(countryCode) {
+  const codePoints = [...countryCode].map(c => 0x1F1E6 + c.charCodeAt(0) - 65);
+  return String.fromCodePoint(...codePoints);
+}
+
+document.getElementById("cityInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    getWeather();
+  }
+});
