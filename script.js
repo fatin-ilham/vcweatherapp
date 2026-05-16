@@ -1,7 +1,4 @@
 
-const API_KEY = '30b2d59ea021e3f1c416bd1d896ffc98';
-const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
-
 async function getWeather() {
   const cityInput = document.getElementById("cityInput");
   const resultDiv = document.getElementById("weatherResult");
@@ -16,8 +13,7 @@ async function getWeather() {
   cityInput.disabled = true;
 
   try {
-    const url = `${API_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`;
-    const res = await fetch(url);
+    const res = await fetch(`/.netlify/functions/weather?city=${encodeURIComponent(city)}`);
     const data = await res.json();
 
     if (data.cod !== 200) {
