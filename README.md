@@ -12,6 +12,19 @@ A neon-styled weather application with Vice City aesthetics, featuring real-time
 - **Mobile Responsive** - Optimized for phones and tablets
 - **API Key Hidden** - Serverless function protects API credentials
 
+## 📸 Screenshots
+
+### Desktop View
+![Desktop Screenshot](./screenshots/desktop.png)
+
+### Mobile View
+![Mobile Screenshot](./screenshots/mobile.png)
+
+> **Note**: Add your screenshots to the `screenshots/` folder:
+> 1. Open the app in browser
+> 2. Press `F12` → Device Toolbar → Test mobile view
+> 3. Take screenshots and save as `desktop.png` and `mobile.png`
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript (Vanilla)
