@@ -2,6 +2,16 @@
 
 A neon-styled weather application with Vice City aesthetics, featuring real-time weather data and background music.
 
+## 🔗 Live Demo
+
+**[🚀 View Live Site](https://fatin-ilham-vcweatherapp.netlify.app)**
+
+> ✅ **Legit Site** - This is a personal weather app project. No login required, no data collection.
+> - Source code public on GitHub
+> - API key hidden via serverless function
+> - Free hosting on Netlify
+> - OpenWeatherMap API for weather data
+
 ## ✨ Features
 
 - **Real-time Weather** - Current temperature, humidity, wind speed, and conditions
